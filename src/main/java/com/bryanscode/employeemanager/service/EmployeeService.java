@@ -5,8 +5,12 @@ import com.bryanscode.employeemanager.model.Employee;
 import com.bryanscode.employeemanager.repository.EmployeeRepository;
 import java.util.List;
 import java.util.UUID;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@Transactional
 public class EmployeeService {
   private final EmployeeRepository employeeRepository;
 
@@ -31,4 +35,9 @@ public class EmployeeService {
   public Employee findEmployeeById(Long id){
     return employeeRepository.findEmployeeById(id).orElseThrow(()->new UserNotFoundException("User with id" + id + "was not found"));
   }
+
+  public Employee updateEmployee(Employee employee){
+    return employeeRepository.save(employee);
+  }
+
 }
