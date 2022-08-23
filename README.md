@@ -1,4 +1,4 @@
-# Employee manager
+# Employee Manager
 
 ## Java employee management api built using maven and spring-boot framework for connection to a local database
 Please see: https://github.com/jamalbryan22/employee_manager_frontend for accompanying front end angular application
